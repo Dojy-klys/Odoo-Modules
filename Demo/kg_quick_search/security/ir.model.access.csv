@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_quick_search_wizard,access_quick_search_wizard,model_quick_search_wizard,base.group_user,1,1,1,1
+access_quick_search_sale_lines,access_quick_search_sale_lines,model_quick_search_sale_lines,base.group_user,1,1,1,1
+access_quick_search_purchase_lines,access_quick_search_purchase_lines,model_quick_search_purchase_lines,base.group_user,1,1,1,1
+access_product_quantity_lines,access_product_quantity_lines,model_product_quantity_lines,base.group_user,1,1,1,1

@@ -1,0 +1,22 @@
+<templates xml:space="preserve">
+    <t t-name="systray_icon" owl="1">
+    <div class="new_icon">
+    <div class="icon_div">
+<div class="toggle-icon" role="button">
+<i id="create_order" t-on-click="_onClick" class="fa fa-search fa-fw"
+   style="color: black; margin-bottom:10px; padding-right:70px; padding: 5px" role="img" aria-label="Search"/>
+</div>
+</div>
+</div>
+</t>
+</templates>
+
+        <!--<templates id="template" xml:space="preserve">-->
+        <!--    <t t-name="actionSystray">-->
+        <!--        <div class="">-->
+        <!--            <a role="button" id="action_systray_search" style="cursor: pointer; color:white" title="Quick Search">-->
+        <!--                <i class="fa fa-search"/>-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--    </t>-->
+        <!--</templates>-->

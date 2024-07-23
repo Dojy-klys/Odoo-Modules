@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="quick_search_wizard_form" model="ir.ui.view">
+        <field name="name">Quick Search wizard</field>
+        <field name="model">quick.search.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="partner_id" invisible="is_purchase != False"/>
+                            <field name="vendor_id" invisible="is_purchase == False"/>
+                            <field name="date_from"/>
+                        </group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="date_to"/>
+                        </group>
+                        <br> </br>
+                    </group>
+                    <div class="oe_title">
+                        <h4>On Hand</h4>
+                    </div>
+                    <field name="product_quantity_ids">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="location"/>
+                            <field name="onhand_qty"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <field name="is_purchase" widget="boolean_toggle"/>
+                    </group>
+                    <br> </br>
+                    <div class="oe_title" string="" invisible="is_purchase != False">
+                        <h4>Sales History</h4>
+                    </div>
+                    <div class="oe_title" string="" invisible="is_purchase == False">
+                        <h4>Purchase History</h4>
+                    </div>
+                    <field name="quick_search_line_ids" invisible="is_purchase != False">
+                        <tree editable="bottom">
+                            <field name="order_date"/>
+                            <field name="sale_order_id"/>
+                            <field name="lpo"/>
+                            <field name="partner_id"/>
+                            <field name="ordered_qty"/>
+                            <field name="delivered_qty"/>
+                            <field name="balance_qty"/>
+                            <field name="unit_price"/>
+                            <field name="total"/>
+                        </tree>
+                    </field>
+                    <field name="quick_search_purchase_ids" invisible="is_purchase == False">
+                        <tree editable="bottom">
+                            <field name="purchase_order_id"/>
+                            <field name="vendors_id"/>
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="expected_arrival"/>
+                            <field name="received_qty"/>
+                            <field name="billed_qty"/>
+                            <field name="unit_price"/>
+                            <field name="total"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quick_search_wizard_action" model="ir.actions.act_window">
+        <field name="name">Quick Search Form</field>
+        <field name="res_model">quick.search.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="quick_search_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
